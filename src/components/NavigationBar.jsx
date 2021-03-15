@@ -1,7 +1,7 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 
-const CNav = () => {
+const NavigationBar = () => {
   return (
     <div>
       <Nav variant="tabs" defaultActiveKey="/home">
@@ -19,4 +19,4 @@ const CNav = () => {
   );
 };
 
-export default CNav;
+export default NavigationBar;

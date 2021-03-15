@@ -1,5 +1,5 @@
 import Accordion from "./components/Accordion";
-import CNav from "./components/CNav";
+import NavigationBar from "./components/NavigationBar";
 import { Container, Row, Col } from "react-bootstrap";
 import Search from "./components/Search";
 
@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <CNav />
+        <NavigationBar />
         <Row>
           <Col>
             <Search />
