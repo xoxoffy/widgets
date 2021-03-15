@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Form, Badge, Row, Container } from "react-bootstrap";
 import axios from "axios";
-import "./Search.css";
+import "../styles/Search.css";
 
 const Search = () => {
   const [term, setTerm] = useState("");
