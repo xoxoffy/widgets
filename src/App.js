@@ -2,6 +2,7 @@ import Accordion from "./components/Accordion";
 import NavigationBar from "./components/NavigationBar";
 import { Container, Row, Col } from "react-bootstrap";
 import Search from "./components/Search";
+import Dropdown from "./components/Dropdown";
 
 const items = [
   {
@@ -21,6 +22,21 @@ const items = [
   },
 ];
 
+const options = [
+  {
+    label: "The Color Red",
+    value: "red",
+  },
+  {
+    label: "The Color Green",
+    value: "green",
+  },
+  {
+    label: "A shade of Blue",
+    value: "blue",
+  },
+];
+
 function App() {
   return (
     <div className="App">
@@ -28,7 +44,7 @@ function App() {
         <NavigationBar />
         <Row>
           <Col>
-            <Search />
+            <Dropdown options={options} />
           </Col>
         </Row>
       </Container>
