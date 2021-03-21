@@ -3,6 +3,10 @@ import { DropdownButton, Dropdown } from "react-bootstrap";
 
 const DropdownMenu = ({ options, selectedColor, setSelectedChangeColor }) => {
   const renderedOptions = options.map((option) => {
+    if (option.value === selectedColor.value) {
+      return null;
+    }
+
     return (
       <Dropdown.Item
         key={option.value}
