@@ -1,13 +1,21 @@
 import React from "react";
 import { DropdownButton, Dropdown } from "react-bootstrap";
 
-const DropdownMenu = ({ options }) => {
+const DropdownMenu = ({ options, selectedColor, setSelectedChangeColor }) => {
   const renderedOptions = options.map((option) => {
-    return <Dropdown.Item key={option.value}>{option.label}</Dropdown.Item>;
+    return (
+      <Dropdown.Item
+        key={option.value}
+        onClick={() => setSelectedChangeColor(option)}
+      >
+        {option.label}
+      </Dropdown.Item>
+    );
   });
   return (
     <div>
-      <DropdownButton id="dropdown-basic-button" title="Select color">
+      <h1>Select a Color</h1>
+      <DropdownButton id="dropdown-basic-button" title={selectedColor.label}>
         {renderedOptions}
       </DropdownButton>
     </div>

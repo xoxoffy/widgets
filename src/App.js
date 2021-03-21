@@ -3,6 +3,7 @@ import NavigationBar from "./components/NavigationBar";
 import { Container, Row, Col } from "react-bootstrap";
 import Search from "./components/Search";
 import DropdownMenu from "./components/DropdownMenu";
+import { useState } from "react";
 
 const items = [
   {
@@ -37,19 +38,25 @@ const options = [
   },
 ];
 
-function App() {
+const App = () => {
+  const [selectedColor, setSelectedColor] = useState(options[0]);
+
   return (
     <div className="App">
       <Container>
         <NavigationBar />
         <Row>
           <Col>
-            <DropdownMenu options={options} />
+            <DropdownMenu
+              selectedColor={selectedColor}
+              setSelectedChangeColor={setSelectedColor}
+              options={options}
+            />
           </Col>
         </Row>
       </Container>
     </div>
   );
-}
+};
 
 export default App;
