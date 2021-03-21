@@ -2,7 +2,7 @@ import Accordion from "./components/Accordion";
 import NavigationBar from "./components/NavigationBar";
 import { Container, Row, Col } from "react-bootstrap";
 import Search from "./components/Search";
-import Dropdown from "./components/Dropdown";
+import DropdownMenu from "./components/DropdownMenu";
 
 const items = [
   {
@@ -44,7 +44,7 @@ function App() {
         <NavigationBar />
         <Row>
           <Col>
-            <Dropdown options={options} />
+            <DropdownMenu options={options} />
           </Col>
         </Row>
       </Container>
