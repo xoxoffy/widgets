@@ -5,6 +5,7 @@ import Search from "./components/Search";
 import DropdownMenu from "./components/DropdownMenu";
 import { useState } from "react";
 import Translate from "./components/Translate";
+import Route from "./components/Route";
 
 const items = [
   {
@@ -49,19 +50,23 @@ const App = () => {
         <NavigationBar />
         <Row>
           <Col>
-            {/*}
-            <button onClick={() => setShowDropdown(!showDropdown)}>
-              Toggle dropdown
-            </button>
-            {showDropdown ? (
+            <Route path="/">
+              <Accordion items={items} />
+            </Route>
+            <Route path="/search">
+              <Search />
+            </Route>
+            <Route path="/dropdown">
               <DropdownMenu
+                label="Select a color"
+                options={options}
                 selected={selected}
                 setSelected={setSelected}
-                options={options}
               />
-            ) : null}
-            */}
-            <Translate />
+            </Route>
+            <Route path="/translate">
+              <Translate />
+            </Route>
           </Col>
         </Row>
       </Container>
