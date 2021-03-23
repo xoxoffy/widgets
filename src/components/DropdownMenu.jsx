@@ -1,7 +1,8 @@
 import React from "react";
+
 import { DropdownButton, Dropdown } from "react-bootstrap";
 
-const DropdownMenu = ({ options, selected, setSelected }) => {
+const DropdownMenu = ({ label, options, selected, setSelected }) => {
   const renderedOptions = options.map((option) => {
     if (option.value === selected.value) {
       return null;
@@ -15,11 +16,11 @@ const DropdownMenu = ({ options, selected, setSelected }) => {
   });
   return (
     <div>
-      <h1>Select a Color</h1>
+      <h3>{label}</h3>
       <DropdownButton id="dropdown-basic-button" title={selected.label}>
         {renderedOptions}
       </DropdownButton>
-      <h1 style={{ color: selected.value }}>Color</h1>
+      {/*<h1 style={{ color: selected.value }}>Color</h1>*/}
     </div>
   );
 };
