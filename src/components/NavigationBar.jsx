@@ -1,29 +1,22 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
+import Link from "./Link";
 
 const NavigationBar = () => {
   return (
     <div>
       <Nav variant="tabs" defaultActiveKey="/home">
         <Nav.Item>
-          <Nav.Link href="/" eventKey="link-1">
-            Accordion index
-          </Nav.Link>
+          <Link href="/">Accordion index</Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/search" eventKey="link-2">
-            Searchbar API
-          </Nav.Link>
+          <Link href="/search">Searchbar API</Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/dropdown" eventKey="link-3">
-            Dropdown color menu
-          </Nav.Link>
+          <Link href="/dropdown">Dropdown color menu</Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/translate" eventKey="link-4">
-            Translate widget
-          </Nav.Link>
+          <Link href="/translate">Translate widget</Link>
         </Nav.Item>
       </Nav>
     </div>
