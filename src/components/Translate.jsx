@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DropdownMenu from "./DropdownMenu";
+import Convert from "./Convert";
 
 const options = [
   {
@@ -23,7 +24,7 @@ const Translate = () => {
   return (
     <div>
       <form>
-        <div class="form-group">
+        <div>
           <h3>Enter text</h3>
           <input
             value={text}
@@ -37,6 +38,9 @@ const Translate = () => {
         setSelected={setLanguage}
         options={options}
       />
+      <hr />
+      <h3>Output</h3>
+      <Convert text={text} language={language} />
     </div>
   );
 };
