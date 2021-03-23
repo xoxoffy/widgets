@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Search from "./components/Search";
 import DropdownMenu from "./components/DropdownMenu";
 import { useState } from "react";
+import Translate from "./components/Translate";
 
 const items = [
   {
@@ -39,7 +40,7 @@ const options = [
 ];
 
 const App = () => {
-  const [selectedColor, setSelectedColor] = useState(options[0]);
+  const [selected, setSelected] = useState(options[0]);
   const [showDropdown, setShowDropdown] = useState(true);
 
   return (
@@ -48,16 +49,19 @@ const App = () => {
         <NavigationBar />
         <Row>
           <Col>
+            {/*}
             <button onClick={() => setShowDropdown(!showDropdown)}>
               Toggle dropdown
             </button>
             {showDropdown ? (
               <DropdownMenu
-                selectedColor={selectedColor}
-                setSelectedChangeColor={setSelectedColor}
+                selected={selected}
+                setSelected={setSelected}
                 options={options}
               />
             ) : null}
+            */}
+            <Translate />
           </Col>
         </Row>
       </Container>
