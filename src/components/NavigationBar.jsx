@@ -12,7 +12,7 @@ const NavigationBar = () => {
           <Nav.Link eventKey="link-2">Searchbar API</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-3">Option 3</Nav.Link>
+          <Nav.Link eventKey="link-3">Dropdown color menu</Nav.Link>
         </Nav.Item>
       </Nav>
     </div>

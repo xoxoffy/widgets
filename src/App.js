@@ -40,6 +40,7 @@ const options = [
 
 const App = () => {
   const [selectedColor, setSelectedColor] = useState(options[0]);
+  const [showDropdown, setShowDropdown] = useState(true);
 
   return (
     <div className="App">
@@ -47,11 +48,16 @@ const App = () => {
         <NavigationBar />
         <Row>
           <Col>
-            <DropdownMenu
-              selectedColor={selectedColor}
-              setSelectedChangeColor={setSelectedColor}
-              options={options}
-            />
+            <button onClick={() => setShowDropdown(!showDropdown)}>
+              Toggle dropdown
+            </button>
+            {showDropdown ? (
+              <DropdownMenu
+                selectedColor={selectedColor}
+                setSelectedChangeColor={setSelectedColor}
+                options={options}
+              />
+            ) : null}
           </Col>
         </Row>
       </Container>
