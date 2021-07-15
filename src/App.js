@@ -2,6 +2,10 @@ import Accordion from "./components/Accordion";
 import NavigationBar from "./components/NavigationBar";
 import { Container, Row, Col } from "react-bootstrap";
 import Search from "./components/Search";
+import DropdownMenu from "./components/DropdownMenu";
+import { useState } from "react";
+import Translate from "./components/Translate";
+import Route from "./components/Route";
 
 const items = [
   {
@@ -21,19 +25,53 @@ const items = [
   },
 ];
 
-function App() {
+const options = [
+  {
+    label: "The Color Red",
+    value: "red",
+  },
+  {
+    label: "The Color Green",
+    value: "green",
+  },
+  {
+    label: "A shade of Blue",
+    value: "blue",
+  },
+];
+
+const App = () => {
+  const [selected, setSelected] = useState(options[0]);
+  const [showDropdown, setShowDropdown] = useState(true);
+
   return (
     <div className="App">
       <Container>
         <NavigationBar />
         <Row>
           <Col>
-            <Search />
+            <Route path="/">
+              <Accordion items={items} />
+            </Route>
+            <Route path="/search">
+              <Search />
+            </Route>
+            <Route path="/dropdown">
+              <DropdownMenu
+                label="Select a color"
+                options={options}
+                selected={selected}
+                setSelected={setSelected}
+              />
+            </Route>
+            <Route path="/translate">
+              <Translate />
+            </Route>
           </Col>
         </Row>
       </Container>
     </div>
   );
-}
+};
 
 export default App;
